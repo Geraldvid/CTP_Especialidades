@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  padding-top: 80px; /* espacio para navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0a3d62;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.navbar span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #0a3d62;
+  display: none;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nav-links li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  background: #1e90ff;
+}
+
+/* Botones especialidades con fondo */
+.botones {
+  display: grid;
+  gap: 15px;
+}
+
+.boton {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px black;
+  transition: transform 0.3s ease;
+}
+
+.boton:hover {
+  transform: scale(1.03);
+}
+
+.fondo-ecoturismo { background-image: url('../img/ecoturismo.jpg'); }
+.fondo-redes { background-image: url('../img/redes.jpg'); }
+.fondo-secretariado { background-image: url('../img/secretariado.jpg'); }
+.fondo-cocina { background-image: url('../img/cocina.jpg'); }
+
+.form-link {
+  font-weight: bold;
+  color: #0a3d62;
+  text-decoration: underline;
+}
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  margin: 10px;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+.delay-3 { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background: #0a3d62;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Responsive Nav */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+  }
+
+  .nav-links li a {
+    padding: 0 15px;
+  }
+}
+
+
+/* //Seeciones */
+.seccion {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 20px;
+  padding: 10px;
+  
+}
+
+
+
+.seccion .texto {
+  flex: 1;
+}
+
+.seccion .imagen {
+  flex: 1;
+  text-align: center;
+}
+
+.seccion .imagen img {
+    width: 100%;
+  max-width:100%;
+  max-height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+  .seccion {
+    flex-direction: row;
+  }
+
+  .seccion.alterna {
+    flex-direction: row-reverse;
+  }
+}
+/* Seccion de niveles */
+
+.seccion-temas {
+  background: #fefefe;
+  padding: 1rem;
+  border-top: 4px solid #4CAF50;
+}
+
+.seccion-temas .imagen img {
+    width: 100%;
+  max-width:100%;
+  max-height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.seccion-temas h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.bloque-nivel {
+  background: #ffffff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.07);
+}
+
+.bloque-nivel h3 {
+  color: #4CAF50;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.bloque-nivel ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.bloque-nivel ul li {
+  margin: 0.5rem 0;
+}
+
+.bloque-nivel ul li::before {
+  content: "📌";
+  margin-right: 0.5rem;
+  color: #4CAF50;
+}
