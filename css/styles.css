@@ -137,17 +137,67 @@ body {
 }
 
 /* Footer */
-footer {
-  margin-top: auto;
-  background: #0a3d62;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+.footer {
+  background: #0e1a2b;
+  color: #f0f0f0;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 10;
 }
 
-/* Responsive Nav */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-left, .footer-right {
+  text-align: center;
+}
+
+.footer-left h4,
+.footer-right h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #00d4ff;
+}
+
+.brand {
+  color: #7cf7c2;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
 @media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.fade-in-footer {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Nav */
+@media (min-width: 1024px) {
   .menu-toggle {
     display: none;
   }
@@ -162,6 +212,15 @@ footer {
   .nav-links li a {
     padding: 0 15px;
   }
+  .seccion-temas .imagen img {
+    width: 100%;
+  max-width:100%;
+  max-height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
 }
 
 
@@ -174,8 +233,6 @@ footer {
   padding: 10px;
   
 }
-
-
 
 .seccion .texto {
   flex: 1;
@@ -202,6 +259,7 @@ footer {
   .seccion.alterna {
     flex-direction: row-reverse;
   }
+  
 }
 /* Seccion de niveles */
 
@@ -254,3 +312,53 @@ footer {
   margin-right: 0.5rem;
   color: #4CAF50;
 }
+
+/* Ajustes para escritorio */
+
+@media (min-width: 1024px) {
+
+  /* Botones de especialidades más grandes y organizados en 2 columnas */
+  .botones {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 2rem;
+  }
+
+  .boton {
+    height: 220px;
+  }
+
+  /* Secciones generales con más padding */
+  .seccion,
+  .seccion-temas {
+    flex-direction: row;
+    padding: 2rem 4rem;
+    align-items: center;
+  }
+
+  .seccion.alterna {
+    flex-direction: row-reverse;
+  }
+
+  .seccion .imagen img,
+  .seccion-temas .imagen img {
+    max-height: 400px;
+    object-fit: contain; /* o 'contain' si prefieres que no se recorte */
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .seccion .texto,
+  .seccion-temas .texto {
+    padding: 0 2rem;
+  }
+
+  .seccion-temas h2 {
+    font-size: 2rem;
+  }
+
+}
+
+
+
