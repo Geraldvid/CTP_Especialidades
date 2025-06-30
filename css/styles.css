@@ -88,6 +88,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-weight: bold;
   font-size: 18px;
   color: white;
@@ -167,6 +168,7 @@ body {
 .brand {
   color: #7cf7c2;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .footer-bottom {
@@ -225,6 +227,10 @@ body {
 
 
 /* //Seeciones */
+.seccion-temas .texto{
+  font-size: 18px;
+  text-align: justify;
+}
 .seccion {
   display: flex;
   flex-direction: column;
@@ -290,11 +296,12 @@ body {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.07);
+  font-size: 18px;
 }
 
 .bloque-nivel h3 {
   color: #4CAF50;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -308,7 +315,7 @@ body {
 }
 
 .bloque-nivel ul li::before {
-  content: "📌";
+  
   margin-right: 0.5rem;
   color: #4CAF50;
 }
@@ -360,5 +367,29 @@ body {
 
 }
 
+.footer-social {
+  text-align: center;
+}
 
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #00d4ff;
+}
+
+.footer-social .redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.footer-social a {
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00d4ff;
+}
 
